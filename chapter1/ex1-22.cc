@@ -14,8 +14,8 @@ int main(int argc, char const *argv[])
                 std::cout << sum << std::endl;
                 sum = item;
             }
-            std::cout << sum << std::endl;
         }
+        std::cout << sum << std::endl;
     }
 
     return 0;
