@@ -24,7 +24,7 @@ int main(int argc, char const *argv[])
     if (cin >> item1.bookNo >> item1.units_sold >> item1_price) {
         while (cin >> item2.bookNo >> item2.units_sold >> item2_price) {
             if (item1.bookNo == item2.bookNo) {
-                signed totalCount = item1.units_sold + item2.units_sold;
+                unsigned totalCount = item1.units_sold + item2.units_sold;
                 double totalRevenue = item1.revenue + item2.revenue;
             } else {
                 cout << item1.bookNo << " " << item1.units_sold << " " << item1_price << " " << item1.revenue << endl;

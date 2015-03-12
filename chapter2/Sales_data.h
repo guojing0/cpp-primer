@@ -2,7 +2,7 @@
 
 struct Sales_data {
     std::string bookISBN;
-    signed soldNum = 0;
-    unsigned price = 0;
+    unsigned soldNum = 0;
+    double price = 0.0;
     double revenue = 0.0;
 };

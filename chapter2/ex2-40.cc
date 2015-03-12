@@ -3,7 +3,7 @@
 struct Sales_data {
     std::string bookName;
     std::string bookISBN;
-    signed SaleNum = 0;
+    unsigned SaleNum = 0;
     double rev = 0.0;
     double rate = 0.0;
 };
