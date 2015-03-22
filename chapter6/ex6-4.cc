@@ -4,13 +4,17 @@ using namespace std;
 
 int fact(int val)
 {
-    int result = 1;
-
-    while (val > 1) {
-        result *= val--;
+    if (val <= 1) {
+        return 1;
+    } else {
+        return val * fact(val - 1);
     }
+}
 
-    return result;
+int interact(int val)
+{
+    cout << "The factorial of " << val << " is " << fact(val) << endl;
+    return 0;
 }
 
 int main(int argc, char const *argv[])
@@ -19,7 +23,7 @@ int main(int argc, char const *argv[])
 
     cout << "Enter a number:" << endl;
     while (cin >> i) {
-        cout << "The factorial of " << i << " is " << fact(i) << endl;
+        interact(i);
     }
 
     return 0;
