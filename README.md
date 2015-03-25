@@ -10,7 +10,7 @@
 
 ## 作者
 
-** [Jing Guo](http://guoj.org/) **
+[**Jing Guo**](http://guoj.org/)
 
 ## 版权
 
