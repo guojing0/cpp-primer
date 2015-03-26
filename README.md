@@ -26,7 +26,7 @@
 - 建议初始化每一个内置类型的变量。
 - 变量只能定义（define）一次，而可以多次声明（declare）。
 
-要声明一个变量而不定义的话需要使用 `extern` 关键字，但不要显式初始化变量：
+要声明一个变量而不定义的话需要使用 `extern` 关键字，并且使用 `extern` 后可以让变量在其它文件中使用，但不要显式初始化变量：
 
     extern int i; // DO NOT ASSIGN.
 
@@ -43,6 +43,33 @@
 
     int *p;
     int *&r = p; // r 是对指针 p 的引用
+
+### const 限定符
+
+#### const 指针
+
+    int x = 10, y = 50;
+    int *const cptr = &x; // 可以改变 cptr 的值而不可以改变 cptr 所在的地址
+    const int *const ccptr = &y; // 既不可以改变 ccptr 的值也不可以改变 ccptr 所在的地址
+
+#### 顶层 const
+
+- 顶层 `const` 表示指针本身是常量；可以表示任何对象是常量，对任何数据类型适用。
+- 底层 `const` 代表指针所指的对象是常量；则与指针和引用等符合类型的基本类型部分有关。
+- 而指针类型既可以是顶层也可以是底层 const。
+
+#### 常量表达式和 constexpr
+
+可以将变量声明为 constexpr 类型以便由编译器验证变量的值是否为常量表达式，例子：
+
+    constexpr int size = 20;
+
+- 当使用 `constexpr` 声明一个指针时，它仅对指针有效，对指针所指的对象无效。并把它锁定义的对象置为顶层 `const`。
+
+例子：
+
+    const int *p = nullptr; // p 是一个指向整型常量的指针
+    constexpr int *q = nullptr; // q 是一个指向整数的常量指针
 
 ### 处理类型
 
