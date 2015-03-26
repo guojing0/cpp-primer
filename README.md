@@ -44,6 +44,14 @@
     int *p;
     int *&r = p; // r 是对指针 p 的引用
 
+### 处理类型
+
+`decltype((var))` 的结果永远是引用，而 `decltype(var)` 只有当 var 本身是引用时才是引用。
+
+    int i;
+    decltype(i) e; // e 是未初始化的 int
+    decltype((i)) d; // d 是 int& 必须进行初始化
+
 ### 自定义数据结构
 
 - 头文件改变后相关的源文件必须重新编译获得更新后的声明。
