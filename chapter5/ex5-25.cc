@@ -1,29 +1,33 @@
+/*
+    The program includes the solutions to ex 5-23 and ex 5-24.
+*/
+
 #include <iostream>
-#include <stdexcept>
 
 using namespace std;
 
-int main(int argc, char const *argv[])
+int main()
 {
-    int x, y;
+    int dividend, divisor;
 
-    cout << "Enter two numbers:" << endl;
-    while (cin >> x >> y) {
+    while (cin >> dividend >> divisor) {
         try {
-            if (y == 0) {
+            if (divisor == 0) {
                 throw runtime_error("Divisor cannot be zero.");
             } else {
-                cout << x / y << endl;
+                cout << dividend / divisor << endl;
             }
         } catch (runtime_error err) {
-            cout << err.what() << "\nTry again? Enter y or n." << endl;
-
+            cout << err.what() << endl;
+            cout << "Try again? Enter y or n." << endl;
             char c;
             cin >> c;
+
             if (!cin || c == 'n') {
                 break;
             }
         }
+
     }
 
     return 0;

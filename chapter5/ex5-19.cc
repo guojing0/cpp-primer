@@ -1,20 +1,20 @@
 #include <iostream>
-#include <string>
 
 using namespace std;
 
-int main(int argc, char const *argv[])
+int main()
 {
-    cout << "Please input two strings:" << endl;
     do {
-        string str, str2;
-        cin >> str >> str2;
-        if (str.size() < str2.size()) {
-            cout << str << endl;
-        } else {
-            cout << str2 << endl;
+        string v1, v2;
+        cout << "Enter two strings: " << endl;
+        if (cin >> v1 >> v2) {
+            if (v1.size() < v2.size()) {
+                cout << v1 << endl;
+            } else {
+                cout << v2 << endl;
+            }
         }
-    } while (true);
+    } while (cin);
 
     return 0;
 }

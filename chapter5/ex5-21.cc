@@ -1,21 +1,24 @@
 #include <iostream>
-#include <string>
-#include <cctype>
 
 using namespace std;
 
-int main(int argc, char const *argv[])
+int main()
 {
-    string word, sub;
+    string str, tempstr;
 
-    while (cin >> word) {
-        if (word == sub && isupper(word[0])) {
-            cout << word << endl;
-            break;
-        } else {
-            sub = word;
+    if (cin >> str) {
+        while (cin >> tempstr) {
+            if (!isupper(tempstr[0])) {
+                continue;
+            }
+            
+            if (str == tempstr) {
+                cout << str << endl;
+                break;
+            } else {
+                str = tempstr;
+            } // it should output no words are align
         }
     }
-
     return 0;
 }

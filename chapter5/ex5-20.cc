@@ -1,20 +1,20 @@
 #include <iostream>
-#include <string>
 
 using namespace std;
 
-int main(int argc, char const *argv[])
+int main()
 {
-    string word, sub;
+    string str, tempstr;
 
-    while (cin >> word) {
-        if (word == sub) {
-            cout << word << endl;
-            break;
-        } else {
-            sub = word;
+    if (cin >> str) {
+        while (cin >> tempstr) {
+            if (str == tempstr) {
+                cout << str << endl;
+                break;
+            } else {
+                str = tempstr;
+            } // it should output no words are align
         }
     }
-
     return 0;
 }
