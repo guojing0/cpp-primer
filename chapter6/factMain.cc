@@ -4,10 +4,9 @@
 
 using namespace std;
 
-int main(int argc, char const *argv[])
+int main()
 {
-    interact(10);
-    cout << abs(-5.4) << endl;
-
+    int n = interact();
+    cout << n << endl;
     return 0;
 }
