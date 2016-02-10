@@ -2,22 +2,18 @@
 
 using namespace std;
 
-void swap(int *p, int *p2)
+void swapNum(int *x, int *y)
 {
     int temp;
-
-    temp = *p;
-    *p = *p2;
-    *p2 = temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
 }
 
-int main(int argc, char const *argv[])
+int main()
 {
-    int x = 10, y = 20;
-    cout << x << " " << y << endl;
-
-    swap(&x, &y);
-    cout << x << " " << y << endl;
-    
+    int a = 42, b = 36;
+    swapNum(&a, &b);
+    cout << a << " " << b << endl;
     return 0;
 }
